@@ -24,6 +24,10 @@ resource "aws_api_gateway_deployment" "_" {
   lifecycle {
     create_before_destroy = true
   }
+  
+  triggers = {
+    redeployment = sha1(data.template_file._.rendered)
+  }
 }
 
 resource "aws_api_gateway_stage" "_" {

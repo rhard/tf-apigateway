@@ -30,6 +30,10 @@ variable "api_template_vars" {
   type        = map
 }
 
+variable "api_binary_media_types" {
+  description = "List of binary media types supported by the REST API"
+}
+
 variable "api_throttling_rate_limit" {
   description = "API Gateway total requests across all API's within a REST endpoint"
 }

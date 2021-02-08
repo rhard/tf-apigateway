@@ -14,6 +14,8 @@ resource "aws_api_gateway_rest_api" "_" {
   api_key_source = "HEADER"
 
   body = data.template_file._.rendered
+
+  binary_media_types = var.api_binary_media_types
 }
 
 resource "aws_api_gateway_deployment" "_" {
